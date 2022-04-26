@@ -1,4 +1,4 @@
-const Todo = ({ todo, todos, setTodos, text }) => {
+const Todo = ({ todo, todos, setTodos }) => {
   const deleteHandler = () => {
     setTodos(todos.filter((el) => el.id !== todo.id))
   };
@@ -16,7 +16,7 @@ const Todo = ({ todo, todos, setTodos, text }) => {
 
   return (
     <div className="todo">
-      <li className={`todo-item ${todo.completed ? "completed" : ""}`}>{text}</li>
+      <li className={`todo-item ${todo.completed ? "completed" : ""}`}>{todo.text}</li>
       <button onClick={completeHandler} className="complete-btn">
         <i className="fas fa-check"></i>
       </button>
